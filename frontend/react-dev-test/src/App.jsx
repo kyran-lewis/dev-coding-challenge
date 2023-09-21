@@ -4,21 +4,14 @@ const App = () => {
   const [jokes,setJokes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  function textReveal() {
-    let punchline = document.getElementById("punchline");
-    if (punchline.style.display === "none") {
-      punchline.style.display = "block";
-    } else {
-      punchline.style.display = "none";
-    }
-  }
-
+  // get jokes from backend and store as variable
   const getJokes = async() =>{
     try {
       setIsLoading(true)
-      const response = await axios.get("http://localhost:3001/jokes")
+      const response = await axios.get("http://localhost:3000/jokes")
       console.log(response.data)
       setJokes(response.data)
+      // set loading to false once joke has been retrieved
       setIsLoading(false)
     } catch(error){
       console.log(error)
