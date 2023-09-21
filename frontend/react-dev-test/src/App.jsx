@@ -16,7 +16,7 @@ const App = () => {
   const getJokes = async() =>{
     try {
       setIsLoading(true)
-      const response = await axios.get("http://localhost:3000/jokes")
+      const response = await axios.get("http://localhost:3001/jokes")
       console.log(response.data)
       setJokes(response.data)
       setIsLoading(false)

@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3001
 const mongoose = require('mongoose');
 const Joke = require('./models/jokesModel')
 
@@ -13,10 +13,6 @@ app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
 app.get('/jokes', async(req, res) =>{
     try{

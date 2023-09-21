@@ -2,7 +2,7 @@
 
 ## Installation
 
-Use node package manager (npm) to install the following 
+Use node package manager (npm) to install the following in backend directory 
 
 ```
 npm install express
@@ -15,6 +15,11 @@ npm install cors
 ```
 ```
 npm install mongoose
+```
+
+Relocate to the frontend directory and Use node package manager (npm) to install the relevant packages by typing:
+```
+npm install
 ```
 
 ## Database Setup
