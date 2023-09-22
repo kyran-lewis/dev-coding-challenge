@@ -27,7 +27,7 @@ To run the code go to the backend directory and simply enter the following comma
 ```
 npm run dev
 ```
-You should be presented with the front page.
+On your brower go to http://localhost:3000/ and you should be presented with the front page.
 
 The all the jokes should appear in the backend at: http://localhost:3000/jokes
 
