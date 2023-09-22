@@ -23,16 +23,11 @@ npm install
 ```
 
 ## Running the servers
-To run the backend server go to the backend directory and simply enter the following command into the terminal:
+To run the code go to the backend directory and simply enter the following command into the terminal:
 ```
 npm run dev
 ```
-In a separate tab in your terminal relocate to the front-end\react-dev-test directory enter the following command to run the front end:
-```
-npm run dev
-```
-To access the backend server got to: http://localhost:3000/
+You should be presented with the front page.
 
-The jokes will appear in: http://localhost:3000/jokes
+The all the jokes should appear in the backend at: http://localhost:3000/jokes
 
-When lanuching the the frontend page it should display the web address in the terminal: http://localhost:5173/
