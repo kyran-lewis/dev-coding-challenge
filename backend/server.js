@@ -27,11 +27,11 @@ app.get('/',  (req, res) =>{
 // get a random joke from database 
 app.get('/jokes', async(req, res) =>{
     try{
+        // find jokes by type
         const generalJokes = await Joke.find({ "type": "general"})
         const programmingJokes = await Joke.find({ "type": "programming"})
         const knockKnockJokes = await Joke.find({ "type": "knock-knock"})
-
-        const randomJoke = await Joke.aggregate([{ $sample: { size: 1 } }]) // Adapted from https://stackoverflow.com/questions/2824157/how-can-i-get-a-random-record-from-mongodb
+        // send jokes as an array where general are at position 0, programming jokes at position 1, knock knock jokes are at position 2
         res.status(200).json([generalJokes,programmingJokes,knockKnockJokes])
     } catch(error){
         res.status(500).json({message: error.message})
