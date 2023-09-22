@@ -1,10 +1,12 @@
 #punchline {
   text-align: center;
   size: 2em;
+  margin: 1em;
 }
 #setup{
   text-align: center;
   size: 2em;
+  margin: 1em;
 }
 .buttons{
   text-align: center;
@@ -12,7 +14,8 @@
 .title{
   color: #646cff;
   text-align: center;
-  margin: 0.5em;
+  margin: 0.2em;
+  margin-top: 5%;
 }
 button {
   /* button default vite */
@@ -36,20 +39,42 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+h1{
+  margin: 0.5em;
+}
+
+h3{
+  margin: 1em;
+}
+
 ul{
   list-style-type: none;
+  margin:0;
+}
+
+li{
+  border-style: solid;
+  margin: 0.1em;
+  border-radius: 7px;
+  display: inline;
+  padding: 0.4em;
+}
+
+p{
+  margin: 0;
 }
 
 main {
   font-size: 2em;
   /* center in the middle of the page */
   margin: 0;
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
+
 
 body{
   font-family: Arial;

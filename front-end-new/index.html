@@ -2,6 +2,7 @@
 <html>
 <head>
     <link href="./style.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body onload="getJokes()">
 <navbar>
@@ -10,45 +11,57 @@
     <button onclick="type3()">Change To Type 3</button>
 </navbar>
 <header>
-    <p>There are three categories of jokes: </p>
+    <h3>There are three categories of jokes: </h3>
     <ul>
-        <li>Type 1: General</li>
-        <li>Type 2: Programming</li>
-        <li>Type 3: Knock Knock</li>
+        <li id="type1">Type 1: General</li>
+        <li id="type2">Type 2: Programming</li>
+        <li id="type3">Type 3: Knock Knock</li>
     </ul>
 </header>
 <main>
     <h1 class="title">Tell Me A Joke</h1>
     <button onclick="revealJoke()">Reveal Punchline</button>
     <button onclick="getJokes()">Next Joke</button>
-    <p id="setup"></p>
+    <p id="setup">...</p>
     <p id="punchline"></p>
 
 </main>
 <script>
     // by default set joke type to 1 i.e. general
+    // document.getElementById(`type${jokeType}`).style.color = "red";
     jokeType = 1;
-
     // set to joke type 1
     function type1(){
         document.getElementById("punchline").style.display = "none";
+        // highlight the type in the list 
+        document.getElementById("type1").style.color = "red";
+        document.getElementById("type2").style.color = "black";
+        document.getElementById("type3").style.color = "black";
         jokeType = 0
         getJokes()
     }
     // set to joke type 2
     function type2(){
         document.getElementById("punchline").style.display = "none";
+        document.getElementById("type2").style.color = "red";
+        document.getElementById("type1").style.color = "black";
+        document.getElementById("type3").style.color = "black";
         jokeType = 1
         getJokes()
     }
     // set to joke type 3
     function type3(){
         document.getElementById("punchline").style.display = "none";
+        document.getElementById("type3").style.color = "red";
+        document.getElementById("type2").style.color = "black";
+        document.getElementById("type1").style.color = "black";
         jokeType = 2
         getJokes()
     }
     // display the punchline to the joke
     function revealJoke() {
+        // slide down animation for joke reveal
+        $('#punchline').slideDown(1000)
         document.getElementById("punchline").style.display = "block";
     }
     
