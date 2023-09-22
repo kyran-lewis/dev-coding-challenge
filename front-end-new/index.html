@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="./style.css" type="text/css" rel="stylesheet">
+</head>
+<body onload="getJokes()">
+<navbar>
+    <button onclick="type1()">Change To Type 1</button>
+    <button onclick="type2()">Change To Type 2</button>
+    <button onclick="type3()">Change To Type 3</button>
+</navbar>
+<header>
+    <p>There are three categories of jokes: </p>
+    <ul>
+        <li>Type 1: General</li>
+        <li>Type 2: Programming</li>
+        <li>Type 3: Knock Knock</li>
+    </ul>
+</header>
+<main>
+    <h1 class="title">Tell Me A Joke</h1>
+    <button onclick="revealJoke()">Reveal Punchline</button>
+    <button onclick="getJokes()">Next Joke</button>
+    <p id="setup"></p>
+    <p id="punchline"></p>
+
+</main>
+<script>
+    // by default set joke type to 1 i.e. general
+    jokeType = 1;
+
+    // set to joke type 1
+    function type1(){
+        document.getElementById("punchline").style.display = "none";
+        jokeType = 0
+        getJokes()
+    }
+    // set to joke type 2
+    function type2(){
+        document.getElementById("punchline").style.display = "none";
+        jokeType = 1
+        getJokes()
+    }
+    // set to joke type 3
+    function type3(){
+        document.getElementById("punchline").style.display = "none";
+        jokeType = 2
+        getJokes()
+    }
+    // display the punchline to the joke
+    function revealJoke() {
+        document.getElementById("punchline").style.display = "block";
+    }
+    
+    // get jokes depending on the type selected by the user
+    function getJokes(){
+        document.getElementById("punchline").style.display = "none";
+        fetch('/jokes')
+            .then(response => response.json())
+            .then(jokes =>  {
+                randomNum = Math.floor(Math.random() * jokes[jokeType].length);
+                console.log(jokeType)
+                document.getElementById('setup').innerHTML = jokes[jokeType][randomNum].setup;
+                document.getElementById('punchline').innerHTML = jokes[jokeType][randomNum].punchline;
+            });
+    }
+        
+        //document.getElementById('output').innerHTML = randomJoke;
+
+</script>
+
+</body>
+</html>

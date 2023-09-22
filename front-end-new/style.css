@@ -1,0 +1,58 @@
+#punchline {
+  text-align: center;
+  size: 2em;
+}
+#setup{
+  text-align: center;
+  size: 2em;
+}
+.buttons{
+  text-align: center;
+}
+.title{
+  color: #646cff;
+  text-align: center;
+  margin: 0.5em;
+}
+button {
+  /* button default vite */
+  color: white;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.75em 1.5em;
+  margin: 0.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  /* transition: border-color 0.25s; */
+}
+button:hover {
+  background-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+ul{
+  list-style-type: none;
+}
+
+main {
+  font-size: 2em;
+  /* center in the middle of the page */
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body{
+  font-family: Arial;
+  text-align: center;
+}
+
