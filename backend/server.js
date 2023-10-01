@@ -1,7 +1,6 @@
 // import necessary modules
 const express = require('express')
 const cors = require('cors')
-//const expressLayouts = require('express-ejs-layouts')
 const app = express()
 const port = 3000
 const mongoose = require('mongoose');

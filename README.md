@@ -16,10 +16,8 @@ npm install cors
 ```
 npm install mongoose
 ```
-
-Relocate to the frontend\react-dev-test directory and Use node package manager (npm) to install the relevant packages by typing:
 ```
-npm install
+npm install ejs
 ```
 
 ## Running the servers
@@ -29,5 +27,4 @@ npm run dev
 ```
 On your brower go to http://localhost:3000/ and you should be presented with the front page.
 
-The all the jokes should appear in the backend at: http://localhost:3000/jokes
 
