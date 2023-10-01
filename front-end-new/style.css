@@ -2,6 +2,7 @@
   text-align: center;
   size: 2em;
   margin: 1em;
+  display: none;
 }
 #setup{
   text-align: center;
@@ -12,31 +13,29 @@
   text-align: center;
 }
 .title{
-  color: #646cff;
+  color: white;
   text-align: center;
   margin: 0.2em;
-  margin-top: 5%;
+  margin-top: 2.5%;
 }
 button {
   /* button default vite */
-  color: white;
-  border-radius: 8px;
-  border: 1px solid transparent;
+  color: black;
+  border-radius: 35px;
+  border: solid;
   padding: 0.75em 1.5em;
-  margin: 0.5em;
+  margin: 0.3em;
+  margin-left: 0.05em;
+  margin-right: 0.05em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: rgb(135, 161, 255);
   cursor: pointer;
   /* transition: border-color 0.25s; */
 }
 button:hover {
-  background-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background-color: rgb(110, 126, 199);
 }
 
 h1{
@@ -49,35 +48,51 @@ h3{
 
 ul{
   list-style-type: none;
-  margin:0;
+  margin-top: 2em;
+
 }
 
 li{
-  border-style: solid;
+  border-bottom-style: none;
   margin: 0.1em;
-  border-radius: 7px;
   display: inline;
   padding: 0.4em;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: white;
 }
 
 p{
   margin: 0;
 }
 
-main {
-  font-size: 2em;
-  /* center in the middle of the page */
-  margin: 0;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); */
+#joke-card{
+  background-color: #ff7cc2;
+  border-style: solid;
+  border-color: black;
+  width: 50%;
+  margin-left: 25%;
+  display: none;
+
 }
 
+main {
+  font-size: 2em;
+  margin: 0;
+}
+
+html {
+  /* To make use of full height of page*/
+  height: 100%;
+  margin: 0;
+}
 
 body{
   font-family: Arial;
   text-align: center;
+  background-image: linear-gradient(to bottom right, black 35%, purple, #ff0086,blue, black 65%);
+  margin: 0;
 }
+
+
 

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body onload="fade()">
+    <%- include ('partials/header') %>
+    <main>
+        <h1 class="title">Tell Me A Joke</h1>
+        <div id="joke-card">
+            <%- include ('partials/joke-card') %>
+        </div>
+        <button onclick="revealJoke()">REVEAL PUNCHLINE</button>
+        <button onclick="show()">NEXT JOKE</button>
+
+    </main>
+    <footer>
+        <p>Created by Kyran Lewis</p>
+    </footer>
+    <script>
+        // by default set joke type to general
+        document.getElementById(`type0`).style.color = "#ff0086";
+        document.getElementById("type0").style.borderBottomStyle = "solid";
+
+        jokeType = 0
+
+        function type0(){
+            $( "#joke-card" ).load( "/general" );
+            jokeType = 0
+            document.getElementById("joke-card").style.display = "none";
+            document.getElementById("punchline").style.display = "none";
+            // highlight the type in the list 
+            document.getElementById("type0").style.color = "#ff0086";
+            document.getElementById("type1").style.color = "white";
+            document.getElementById("type2").style.color = "white";
+
+            document.getElementById("type0").style.borderBottomStyle = "solid";
+            document.getElementById("type1").style.borderBottomStyle = "none";
+            document.getElementById("type2").style.borderBottomStyle = "none";
+
+            fade()
+        }
+        function type1(){
+            $( "#joke-card" ).load( "/programming" );
+            jokeType = 1
+            document.getElementById("joke-card").style.display = "none";
+            document.getElementById("punchline").style.display = "none";
+
+            document.getElementById("type1").style.color = "#ff0086";
+            document.getElementById("type0").style.color = "white";
+            document.getElementById("type2").style.color = "white";
+
+            document.getElementById("type0").style.borderBottomStyle = "none";
+            document.getElementById("type1").style.borderBottomStyle = "solid";
+            document.getElementById("type2").style.borderBottomStyle = "none";
+            fade()
+        }
+        function type2(){
+            $( "#joke-card" ).load( "/knock-knock" );
+            jokeType = 2
+            document.getElementById("joke-card").style.display = "none";
+            document.getElementById("punchline").style.display = "none";
+            document.getElementById("type2").style.color = "#ff0086";
+            document.getElementById("type1").style.color = "white";
+            document.getElementById("type0").style.color = "white";
+
+            document.getElementById("type0").style.borderBottomStyle = "none";
+            document.getElementById("type1").style.borderBottomStyle = "none";
+            document.getElementById("type2").style.borderBottomStyle = "solid";
+            fade()
+        }
+
+        function show(){
+            document.getElementById("joke-card").style.display = "none";
+            if (jokeType === 0){
+                $("#joke-card").load( "/general" );
+            }
+            else if (jokeType === 1){
+                $("#joke-card").load( "/programming" );
+            }
+            else{
+                $("#joke-card").load( "/knock-knock" );
+            }
+            fade()
+        }
+            function revealJoke() {
+            // slide down animation for joke reveal
+            $('#punchline').slideDown(1000)
+            document.getElementById("punchline").style.display = "block";
+        }
+
+        function fade(){
+            $("#joke-card").fadeIn("slow");
+        }
+    </script>
+
+</body>
+</html>
