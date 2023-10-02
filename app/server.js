@@ -10,7 +10,7 @@ let jokeType = 0
 
 app.use(express.json())
 
-app.use(express.static(path.join(__dirname, '../front-end-new')));
+app.use(express.static(path.join(__dirname, 'styles')));
 app.set('views',path.join(__dirname,'views'))
 app.set('view engine','ejs');
 
