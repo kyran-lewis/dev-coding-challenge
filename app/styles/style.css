@@ -19,7 +19,6 @@
   margin-top: 2.5%;
 }
 button {
-  /* button default vite */
   color: black;
   border-radius: 35px;
   border: solid;
@@ -32,8 +31,8 @@ button {
   font-family: inherit;
   background-color: rgb(135, 161, 255);
   cursor: pointer;
-  /* transition: border-color 0.25s; */
 }
+/* darken button when hovered over */
 button:hover {
   background-color: rgb(110, 126, 199);
 }
@@ -88,7 +87,7 @@ html {
 }
 
 body{
-  font-family: Arial;
+  font-family: Verdana;
   text-align: center;
   background-image: linear-gradient(to bottom right, black 35%, purple, #ff0086,blue, black 65%);
   margin: 0;

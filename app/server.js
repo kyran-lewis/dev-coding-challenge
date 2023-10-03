@@ -16,7 +16,7 @@ app.set('view engine','ejs');
 
 app.use(cors());
 
-
+// by default retrieve general jokes
 app.get('/',  async(req, res) =>{
     const generalJokes = await Joke.find({ "type": "general"})
     let randomNum = Math.floor((Math.random() * generalJokes.length));
@@ -25,6 +25,7 @@ app.get('/',  async(req, res) =>{
     })
 })
 
+// retrieve general jokes
 app.get("/general", async(req, res) => {
     generalJokes = await Joke.find({ "type": "general"})
     let randomNum = Math.floor((Math.random() * generalJokes.length));
@@ -33,6 +34,7 @@ app.get("/general", async(req, res) => {
     });
   });
   
+  // retrieve programming jokes
   app.get("/programming", async(req, res) => {
     const programmingJokes = await Joke.find({ "type": "programming"}),
     randomNum = Math.floor((Math.random() * programmingJokes.length));
@@ -41,6 +43,7 @@ app.get("/general", async(req, res) => {
     });
   });
 
+  // retrieve knock knock jokes
   app.get("/knock-knock", async(req, res) => {
     const knockKnockJokes = await Joke.find({ "type": "knock-knock"}),
     randomNum = Math.floor((Math.random() * knockKnockJokes.length));

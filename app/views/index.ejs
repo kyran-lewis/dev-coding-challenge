@@ -12,7 +12,7 @@
             <%- include ('partials/joke-card') %>
         </div>
         <button onclick="revealJoke()">Reveal Punchline</button>
-        <button onclick="show()">Next Joke</button>
+        <button onclick="nextJoke()">Next Joke</button>
 
     </main>
     <footer>
@@ -20,59 +20,73 @@
     </footer>
     <script>
         // by default set joke type to general
-        document.getElementById(`type0`).style.color = "#ff0086";
-        document.getElementById("type0").style.borderBottomStyle = "solid";
+        document.getElementById(`typeGeneral`).style.color = "#ff0086";
+        document.getElementById("typeGeneral").style.borderBottomStyle = "solid";
 
         jokeType = 0
 
-        function type0(){
+        // when general tab is clicked
+        function typeGeneral(){
             $( "#joke-card" ).load( "/general" );
             jokeType = 0
+            // for fade in effect hide the whole joke card so it can reappear
             document.getElementById("joke-card").style.display = "none";
+            // hide punchline
             document.getElementById("punchline").style.display = "none";
-            // highlight the type in the list 
-            document.getElementById("type0").style.color = "#ff0086";
-            document.getElementById("type1").style.color = "white";
-            document.getElementById("type2").style.color = "white";
-
-            document.getElementById("type0").style.borderBottomStyle = "solid";
-            document.getElementById("type1").style.borderBottomStyle = "none";
-            document.getElementById("type2").style.borderBottomStyle = "none";
+            // change colour of the text
+            document.getElementById("typeGeneral").style.color = "#ff0086";
+            document.getElementById("typeProgramming").style.color = "white";
+            document.getElementById("typeKnockKnock").style.color = "white";
+            // highlight with tab style
+            document.getElementById("typeGeneral").style.borderBottomStyle = "solid";
+            document.getElementById("typeProgramming").style.borderBottomStyle = "none";
+            document.getElementById("typeKnockKnock").style.borderBottomStyle = "none";
 
             fade()
         }
-        function type1(){
+        
+        // when programming tab is clicked
+        function typeProgramming(){
             $( "#joke-card" ).load( "/programming" );
             jokeType = 1
+            // for fade in effect hide the whole joke card so it can reappear
             document.getElementById("joke-card").style.display = "none";
+            // hide punchline
             document.getElementById("punchline").style.display = "none";
-
-            document.getElementById("type1").style.color = "#ff0086";
-            document.getElementById("type0").style.color = "white";
-            document.getElementById("type2").style.color = "white";
-
-            document.getElementById("type0").style.borderBottomStyle = "none";
-            document.getElementById("type1").style.borderBottomStyle = "solid";
-            document.getElementById("type2").style.borderBottomStyle = "none";
+            // change colour of the text
+            document.getElementById("typeProgramming").style.color = "#ff0086";
+            document.getElementById("typeGeneral").style.color = "white";
+            document.getElementById("typeKnockKnock").style.color = "white";
+            // highlight with tab style
+            document.getElementById("typeGeneral").style.borderBottomStyle = "none";
+            document.getElementById("typeProgramming").style.borderBottomStyle = "solid";
+            document.getElementById("typeKnockKnock").style.borderBottomStyle = "none";
             fade()
         }
-        function type2(){
+
+        // when knock knock tab is clicked
+        function typeKnockKnock(){
             $( "#joke-card" ).load( "/knock-knock" );
             jokeType = 2
+            // for fade in effect hide the whole joke card so it can reappear
             document.getElementById("joke-card").style.display = "none";
+            // hide punchline
             document.getElementById("punchline").style.display = "none";
-            document.getElementById("type2").style.color = "#ff0086";
-            document.getElementById("type1").style.color = "white";
-            document.getElementById("type0").style.color = "white";
-
-            document.getElementById("type0").style.borderBottomStyle = "none";
-            document.getElementById("type1").style.borderBottomStyle = "none";
-            document.getElementById("type2").style.borderBottomStyle = "solid";
+            // change colour of the text
+            document.getElementById("typeKnockKnock").style.color = "#ff0086";
+            document.getElementById("typeProgramming").style.color = "white";
+            document.getElementById("typeGeneral").style.color = "white";
+            // highlight with tab style
+            document.getElementById("typeGeneral").style.borderBottomStyle = "none";
+            document.getElementById("typeProgramming").style.borderBottomStyle = "none";
+            document.getElementById("typeKnockKnock").style.borderBottomStyle = "solid";
             fade()
         }
 
-        function show(){
+        // when next joke button is clicked
+        function nextJoke(){
             document.getElementById("joke-card").style.display = "none";
+            // depending of the type selected load another joke
             if (jokeType === 0){
                 $("#joke-card").load( "/general" );
             }
@@ -84,12 +98,15 @@
             }
             fade()
         }
-            function revealJoke() {
+        
+        // when reveal button is clicked
+        function revealJoke() {
             // slide down animation for joke reveal
             $('#punchline').slideDown(1000)
             document.getElementById("punchline").style.display = "block";
         }
 
+        // fade in animation
         function fade(){
             $("#joke-card").fadeIn("slow");
         }
