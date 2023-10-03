@@ -2,7 +2,7 @@
 
 ## Installation
 
-Navigate to the directory app should follow this path coding-challenge/fullstacktask/app
+Navigate to the directory app
 
 Use node package manager (npm) to install the following in app directory 
 
